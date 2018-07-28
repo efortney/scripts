@@ -1,0 +1,25 @@
+#!/bin/bash
+# bash script to create an web based project using node 
+
+mkdir $1
+cd $1 
+
+mkdir client 
+mkdir server
+
+cd server 
+echo "creating server..."
+npm init 
+echo "installing expres..."
+npm install --save express 
+
+
+cd client 
+echo "creating client..."
+npm init 
+
+echo "installing linter..."
+npx install-peerdeps --dev eslint-config-airbnb
+touch .eslintrc 
+echo "module.exports={'extends': 'airbnb'}" >> .eslintrc
+
